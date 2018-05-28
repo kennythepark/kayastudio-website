@@ -1,10 +1,13 @@
 <template>
   <div>
-    <canvas class="scene scene--full" id="scene"></canvas>
-    <div class="content__inner">
-		  <h2 class="content__title">Physics</h2>
-		  <h3 class="content__subtitle">Quantum Mechanics</h3>
-	</div>
+    <img class="responsive" src="../assets/test_image.png">
+    <div class="content">
+      <canvas class="scene scene--full" id="scene"></canvas>
+      <div class="content__inner">
+        <h2 class="content__title">KAYA</h2> 
+		    <!-- <h3 class="content__subtitle">Quantum Mechanics</h3> -->
+	    </div>
+    </div>
   </div>
 </template>
 
@@ -40,26 +43,77 @@ a {
   color: #42b983;
 }
 
-/* .scene {
-	position: absolute;
-} */
+.responsive {
+  opacity: 0.5;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
-/* .scene--left {
-	width: 100vmin;
-	height: 100vmin;
-	transform: translate3d(-50vmin,0,0);
-} */
+.scene {
+  position: absolute;
+}
+
+.content {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto;
+  min-height: 100vh;
+  /* background: #101010 url(../assets/test_image.png) no-repeat 50% 50%; */
+  /* background-color: transparent;
+  background-image: url("../assets/test_image.png");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center; */
+}
+
+.content__inner {
+  grid-area: 1 / 1 / 1 / 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.content__title {
+  font-family: "nexa_boldregular", sans-serif;
+  font-size: 25vw;
+  font-weight: normal;
+  font-style: italic;
+  /* color: var(--color-title); */
+  color: #fffff0;
+  text-align: center;
+  /* margin: 0; */
+  margin-top: 20px;
+  margin-right: 30px;
+  pointer-events: none;
+}
+
+.content__subtitle {
+  font-size: 1.25em;
+  color: var(--color-subtitle);
+  padding: 0 0.75em;
+  margin: 0;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
 .scene--full {
   width: 100%;
   height: 100vh;
 }
-
-/* .scene--up {
-	height: 150vmin;
-	width: 150vmin;
-	top: -50vh;
-	left: 50%;
-	margin-left: -75vmin;
-} */
 </style>
