@@ -7,13 +7,13 @@
 
 <script>
 export default {
-  name: 'App'
-}
+  name: "App"
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -22,6 +22,12 @@ export default {
 }
 
 html {
+  height: 100%;
   background: #000;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
 }
 </style>

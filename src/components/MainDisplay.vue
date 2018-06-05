@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="kaya-wrapper-container">
     <img class="responsive" src="../assets/test_image.png">
     <div class="content">
       <canvas class="scene scene--full" id="scene"></canvas>
@@ -41,6 +41,11 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.kaya-wrapper-container {
+  height: 100%;
+  overflow: hidden;
 }
 
 .responsive {
