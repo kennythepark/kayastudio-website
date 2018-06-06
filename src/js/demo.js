@@ -26,7 +26,8 @@ sphere.rotation.x = Math.PI / 8;
 scene.add(sphere);
 
 var material = new THREE.LineBasicMaterial({
-  color: 0xd32f2f
+//   color: 0xd32f2f
+  color: 0x1a05b5
 });
 var linesAmount = 25;
 var radius = 100;
@@ -57,7 +58,7 @@ function updateVertices (a) {
     for (var i = 0; i <= verticesAmount; i++) {
       var vector = line.geometry.vertices[i];
       //   var ratio = perlin.noise.simplex3(vector.x * 0.009, vector.z * 0.009 + a * 0.0006, line.geometry.y * 0.009) * 50;
-      var ratio = perlin.noise.simplex3(vector.x * 0.013, vector.z * 0.009 + a * 0.0006, line.geometry.y * 0.009) * 75;
+      var ratio = perlin.noise.simplex3(vector.x * 0.015, vector.z * 0.009 + a * 0.0006, line.geometry.y * 0.009) * 75;
       vector.copy(vector._o);
       vector.multiplyScalar(radiusHeight + ratio);
       vector.y = line.geometry.y - radius;

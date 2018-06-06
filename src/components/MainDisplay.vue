@@ -93,11 +93,11 @@ a {
 
 .content__title {
   font-family: "nexa_boldregular", sans-serif;
-  font-size: 25vw;
-  font-weight: normal;
+  font-size: 21vw;
+  font-weight: bold;
   font-style: italic;
   /* color: var(--color-title); */
-  color: #fffff0;
+  color: #ffe;
   text-align: center;
   /* margin: 0; */
   margin-top: 20px;
