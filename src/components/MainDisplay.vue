@@ -20,7 +20,7 @@ export default {
     };
   },
   mounted() {
-    require("../js/demo.js");
+    require("../js/threeGraphGenerator.js");
   }
 };
 </script>

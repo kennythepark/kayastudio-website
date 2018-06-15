@@ -1,34 +1,33 @@
+'use strict';
+
 import perlin from 'perlin';
 import TweenMax from 'gsap';
 import * as THREE from 'three';
 
-var canvas = document.querySelector('canvas');
-var width = canvas.offsetWidth;
-var height = canvas.offsetHeight;
-
-var renderer = new THREE.WebGLRenderer({
+const canvas = document.querySelector('canvas');
+let width = canvas.offsetWidth;
+let height = canvas.offsetHeight;
+let scene = new THREE.Scene();
+let camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+let sphere = new THREE.Group();
+let mouse = new THREE.Vector2(0.8, 0.5);
+let material = new THREE.LineBasicMaterial({ color: 0x1a05b5 });
+let renderer = new THREE.WebGLRenderer({
   canvas: canvas,
   antialias: true,
   alpha: true
 });
 
+// TODO: create functions, constructors for a class
+
 renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
 renderer.setSize(width, height);
-renderer.setClearColor(0x000000, 0);
 
-var scene = new THREE.Scene();
-
-var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
 camera.position.set(0, 0, 360);
 
-var sphere = new THREE.Group();
 sphere.rotation.x = Math.PI / 8;
 scene.add(sphere);
 
-var material = new THREE.LineBasicMaterial({
-//   color: 0xd32f2f
-  color: 0x1a05b5
-});
 var linesAmount = 25;
 var radius = 100;
 var verticesAmount = 75;
@@ -57,7 +56,6 @@ function updateVertices (a) {
     var radiusHeight = Math.sqrt(line.geometry.y * (2 * radius - line.geometry.y));
     for (var i = 0; i <= verticesAmount; i++) {
       var vector = line.geometry.vertices[i];
-      //   var ratio = perlin.noise.simplex3(vector.x * 0.009, vector.z * 0.009 + a * 0.0006, line.geometry.y * 0.009) * 50;
       var ratio = perlin.noise.simplex3(vector.x * 0.015, vector.z * 0.009 + a * 0.0006, line.geometry.y * 0.009) * 75;
       vector.copy(vector._o);
       vector.multiplyScalar(radiusHeight + ratio);
@@ -68,7 +66,7 @@ function updateVertices (a) {
 }
 
 function render (a) {
-  requestAnimationFrame(render);
+  window.requestAnimationFrame(render);
   updateVertices(a);
   renderer.render(scene, camera);
 }
@@ -83,8 +81,6 @@ function onResize () {
   renderer.setSize(width, height);
 }
 
-var mouse = new THREE.Vector2(0.8, 0.5);
-
 function onMouseMove (e) {
   mouse.y = e.clientY / window.innerHeight;
   TweenMax.to(sphere.rotation, 2, {
@@ -93,7 +89,7 @@ function onMouseMove (e) {
   });
 }
 
-requestAnimationFrame(render);
+window.requestAnimationFrame(render);
 window.addEventListener('mousemove', onMouseMove);
 var resizeTm;
 window.addEventListener('resize', function () {
