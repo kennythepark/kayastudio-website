@@ -18,8 +18,6 @@ let renderer = new THREE.WebGLRenderer({
   alpha: true
 });
 
-// TODO: create functions, constructors for a class
-
 renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
 renderer.setSize(width, height);
 

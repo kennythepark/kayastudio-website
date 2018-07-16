@@ -1,10 +1,12 @@
 <template>
   <div class="kaya-wrapper-container">
+
     <img class="responsive" src="../assets/test_image.png">
     <div class="content">
       <canvas class="scene scene--full" id="scene"></canvas>
       <div class="content__inner">
-        <h2 class="content__title">KAYA</h2> 
+        <!-- <h2 class="content__title">KAYA</h2> -->
+        <img src="../assets/main_logo.gif">
 		    <!-- <h3 class="content__subtitle">Quantum Mechanics</h3> -->
 	    </div>
     </div>
