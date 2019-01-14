@@ -8,6 +8,7 @@
         <!-- <h2 class="content__title">KAYA</h2> -->
         <img src="../assets/main_logo.gif">
 		    <!-- <h3 class="content__subtitle">Quantum Mechanics</h3> -->
+        <h3 class="coming_soon">COMING SOON</h3>
 	    </div>
     </div>
   </div>
@@ -113,6 +114,18 @@ a {
   padding: 0 0.75em;
   margin: 0;
   letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.coming_soon {
+  font-size: 1.25em;
+  color: #dedede;
+  padding: 0 0.75em;
+  margin: 0;
+  letter-spacing: 0.2em;
   text-indent: 0.5em;
   text-align: center;
   font-weight: bold;
